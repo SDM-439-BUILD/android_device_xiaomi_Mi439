@@ -22,6 +22,22 @@ PRODUCT_PACKAGES += \
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
+# RisingOS Stuffs
+ROM_FOLDER := lineage
+RISING_MAINTAINER=FARHAN•AFK
+WITH_GMS := true
+TARGET_CORE_GMS := true
+PRODUCT_NO_CAMERA := false
+
+# Signing
+-include vendor/lineage-priv/keys/keys.mk
+
+# overly 
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME="Mi439_4_19" \
+    RISING_MAINTAINER="FARHAN•AFK" \
+    RISING_CHIPSET="SDM439"
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Mi439
 PRODUCT_NAME := lineage_Mi439
